@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="secondpage.css">
+</head>
+<body>
+    <section>
+<div class="container-fluid">
+<div class="row">
+    <div class="contact-w3l" id="contact" >
+    <form action="" id="submit-form" >
+        <input type="text" placeholder="Name" name="Name" required="">
+        <input type="email" placeholder="Email" name="Email" required="">
+        <textarea name="Message" placeholder="Message" required=""></textarea>
+        <div class="con-form text-center">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+</div>
+    
+</div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#submit-form").validate({
+                rules: {
+                    Name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    Email: {
+                        required: true,
+                        email: true
+                    },
+                    Message: {
+                        required: true,
+                        minlength: 10
+                    }
+                },
+                messages: {
+                    Name: {
+                        required: "Please enter your name",
+                        minlength: "Your name must be at least 2 characters long"
+                    },
+                    Email: {
+                        required: "Please enter your email",
+                        email: "Please enter a valid email address"
+                    },
+                    Message: {
+                        required: "Please enter a message",
+                        minlength: "Your message must be at least 10 characters long"
+                    }
+                },
+                
+            });
+        });
+       
+        </script>
+    
+</body>
+</html>
